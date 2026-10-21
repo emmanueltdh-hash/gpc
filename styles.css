@@ -32,7 +32,17 @@
 @media (max-width:430px){body{font-size:15px}.brand span{max-width:170px}.brand strong{font-size:14px}.hero{padding-top:48px}.hero-main,.hero-visual{height:405px;min-height:405px}.hero-card{left:10px;right:10px;bottom:14px;padding:14px 16px}.hero-stamp{width:82px;height:82px;right:8px;top:12px}.hero-stamp strong{font-size:23px}.service-card{padding:26px 22px}.service-icon{margin-bottom:38px}.approach-image>p{left:22px;bottom:25px}.steps li{grid-template-columns:42px 1fr}.programme-list article{grid-template-columns:50px 1fr;gap:16px}.programme-list article>span{width:48px;height:48px}.contact-form{padding:23px 17px}.footer-brand{align-items:flex-start}}
 @media (prefers-reduced-motion:reduce){.hero .eyebrow,.hero h1,.hero-lede,.hero-actions,.hero-trust,.hero-visual{opacity:1;transform:none;clip-path:none}.hero.hero-ready .hero-card,.hero.hero-ready .hero-stamp{animation:none}.reveal{transition:opacity .2s ease;transform:none}.gallery img,.service-card,.button,.nav-cta{transition-duration:.01ms!important}}
 
-/* Prevent intrinsic image widths from forcing mobile grid columns wider than the viewport. */
-.hero>*{min-width:0}
-@media (max-width:1000px){.hero{grid-template-columns:minmax(0,1fr)}.hero-copy,.hero-visual{width:100%;max-width:100%}}
-@media (max-width:650px){.hero{padding-left:20px;padding-right:20px}.hero h1,.hero-lede,.eyebrow{max-width:100%;overflow-wrap:break-word}.brand{min-width:0}.brand span{min-width:0}.brand strong{white-space:normal}.hero-card{max-width:calc(100% - 20px)}}
+/* Expanded spaces gallery and direct contact information */
+.gallery{grid-template-columns:repeat(3,1fr);grid-template-rows:320px 320px}
+.gallery-large{grid-column:span 2;grid-row:span 2}
+.gallery figcaption{right:24px}
+.contact-copy>p{color:#d9cadb;font-size:18px}
+.contact-details{display:grid;gap:13px;margin-top:30px}
+.contact-details>a,.social-links a{display:flex;align-items:flex-start;gap:12px;width:max-content;max-width:100%;color:#fff;font-size:14px;line-height:1.45}
+.contact-details svg{flex:0 0 21px;width:21px;height:21px;margin-top:1px;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-details svg .filled{fill:var(--gold);stroke:none}
+.social-links{display:flex;gap:22px;flex-wrap:wrap;margin-top:5px}
+.contact-details a:hover span{text-decoration:underline;text-underline-offset:4px}
+
+@media (max-width:1000px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:500px repeat(2,300px)}.gallery-large{grid-column:1/3;grid-row:auto}}
+@media (max-width:650px){.gallery{display:block}.gallery figure,.gallery-large{height:360px!important;margin-bottom:16px}.contact-details>a{font-size:13px}.social-links{gap:18px}}
